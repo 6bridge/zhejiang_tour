@@ -1,0 +1,392 @@
+:root {
+    --primary-color: #1976d2;
+    --secondary-color: #2196f3;
+    --text-color: #333;
+    --background-color: #f5f5f5;
+    --card-background: #ffffff;
+    --border-color: #e0e0e0;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans SC', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: var(--card-background);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+h1 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.date {
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+}
+
+.weather-summary {
+    margin-top: 1rem;
+    color: #666;
+}
+
+.print-controls {
+    text-align: right;
+    margin-bottom: 1rem;
+}
+
+.print-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.print-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+section {
+    background-color: var(--card-background);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.timeline .day {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-left: 3px solid var(--primary-color);
+    background-color: rgba(33, 150, 243, 0.05);
+}
+
+.day-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.location {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+.day ul {
+    list-style: none;
+    margin-left: 1rem;
+}
+
+.day li {
+    margin: 0.5rem 0;
+}
+
+.day i {
+    margin-right: 0.5rem;
+    color: var(--primary-color);
+}
+
+.transport-card, .hotel-card {
+    background-color: rgba(33, 150, 243, 0.05);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    border-left: 3px solid var(--primary-color);
+}
+
+.transport-card h3, .hotel-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.transport-card ul, .tips ul {
+    list-style: none;
+    margin-left: 1rem;
+}
+
+.transport-card li, .tips li {
+    margin: 0.5rem 0;
+}
+
+.tips i {
+    color: var(--primary-color);
+    margin-right: 0.5rem;
+}
+
+.hotel-card p {
+    margin: 0.5rem 0;
+}
+
+.budget {
+    margin-top: 2rem;
+}
+
+.budget ul {
+    list-style: none;
+    margin-left: 1rem;
+}
+
+.budget li {
+    margin: 0.8rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 1rem;
+}
+
+.budget i {
+    color: var(--primary-color);
+    margin-right: 0.5rem;
+    width: 20px;
+}
+
+.budget .total {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+    font-weight: bold;
+    color: var(--primary-color);
+    text-align: right;
+}
+
+.hotel-card .fa-money-bill-wave {
+    color: #2e7d32;
+}
+
+footer {
+    text-align: center;
+    color: #666;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+
+/* 添加移动端特定样式 */
+.mobile-header {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0 16px;
+    z-index: 1000;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mobile-header h1 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.menu-btn, .share-btn {
+    background: none;
+    border: none;
+    color: white;
+    padding: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.mobile-nav {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    background-color: white;
+    box-shadow: 0 -2px 4px var(--shadow-color);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8px 0;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 0.8rem;
+}
+
+.nav-item i {
+    font-size: 1.2rem;
+    margin-bottom: 4px;
+    color: var(--primary-color);
+}
+
+.back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    cursor: pointer;
+    z-index: 999;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+
+.action-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.action-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+/* 响应式设计更新 */
+@media (max-width: 600px) {
+    body {
+        padding-top: 56px;
+        padding-bottom: 56px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .mobile-header {
+        display: flex;
+    }
+
+    .desktop-title {
+        display: none;
+    }
+
+    .desktop-only {
+        display: none;
+    }
+
+    .day-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .location {
+        margin-top: 0.25rem;
+    }
+
+    section {
+        margin-bottom: 1rem;
+        padding: 1rem;
+    }
+
+    .timeline .day {
+        padding: 0.8rem;
+    }
+
+    .hotel-card, .transport-card {
+        padding: 0.8rem;
+    }
+
+    .action-buttons {
+        flex-wrap: wrap;
+    }
+
+    .action-btn {
+        flex: 1;
+        min-width: 120px;
+        justify-content: center;
+    }
+}
+
+/* 打印样式 */
+@media print {
+    body {
+        background-color: white;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .print-controls {
+        display: none;
+    }
+
+    section {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid var(--border-color);
+        margin: 10px 0;
+    }
+
+    .timeline .day {
+        break-inside: avoid;
+    }
+
+    footer {
+        margin-top: 1rem;
+    }
+
+    /* A4纸张边距 */
+    @page {
+        margin: 10mm;
+        size: A4;
+    }
+} 

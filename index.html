@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#1976d2">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>浙江六日游行程规划</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="mobile-header">
+        <button class="menu-btn" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
+        <h1>浙江六日游</h1>
+        <button class="share-btn" onclick="shareItinerary()">
+            <i class="fas fa-share-alt"></i>
+        </button>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1 class="desktop-title">浙江六日游行程规划</h1>
+            <p class="date">2025年5月1日 - 5月6日</p>
+            <div class="weather-summary">
+                <i class="fas fa-sun"></i> 天气预报：晴朗，气温14-26°C
+            </div>
+        </header>
+
+        <div class="action-buttons">
+            <button onclick="window.print()" class="action-btn print-btn">
+                <i class="fas fa-print"></i> 打印行程
+            </button>
+            <button onclick="addToCalendar()" class="action-btn calendar-btn">
+                <i class="fas fa-calendar-plus"></i> 添加到日历
+            </button>
+            <button onclick="shareItinerary()" class="action-btn share-btn desktop-only">
+                <i class="fas fa-share-alt"></i> 分享行程
+            </button>
+        </div>
+
+        <section class="overview">
+            <h2>行程概览</h2>
+            <div class="timeline">
+                <div class="day">
+                    <div class="day-header">
+                        <h3>Day 1 - 5月1日</h3>
+                        <span class="location">深圳→杭州</span>
+                    </div>
+                    <ul>
+                        <li><i class="fas fa-plane"></i> 深圳宝安→杭州萧山（早上8点航班）</li>
+                        <li><i class="fas fa-subway"></i> 地铁前往城站火车站</li>
+                        <li><i class="fas fa-train"></i> 杭州→湖州（约1小时）</li>
+                        <li><i class="fas fa-mountain"></i> 太湖旅游度假区</li>
+                        <li><i class="fas fa-hotel"></i> 入住湖州市区酒店</li>
+                    </ul>
+                </div>
+
+                <div class="day">
+                    <div class="day-header">
+                        <h3>Day 2 - 5月2日</h3>
+                        <span class="location">湖州→杭州</span>
+                    </div>
+                    <ul>
+                        <li><i class="fas fa-mountain"></i> 南浔古镇游览（上午）</li>
+                        <li><i class="fas fa-train"></i> 湖州→杭州（下午）</li>
+                        <li><i class="fas fa-hotel"></i> 入住杭州城站附近快捷酒店</li>
+                        <li><i class="fas fa-moon"></i> 清河坊夜市</li>
+                    </ul>
+                </div>
+
+                <div class="day">
+                    <div class="day-header">
+                        <h3>Day 3 - 5月3日</h3>
+                        <span class="location">杭州→宁波</span>
+                    </div>
+                    <ul>
+                        <li><i class="fas fa-landmark"></i> 南宋德寿宫遗址博物馆（上午）</li>
+                        <li><i class="fas fa-train"></i> 杭州东站→宁波站（下午）</li>
+                        <li><i class="fas fa-hotel"></i> 入住宁波火车站附近酒店</li>
+                        <li><i class="fas fa-moon"></i> 老外滩夜景</li>
+                    </ul>
+                </div>
+
+                <div class="day">
+                    <div class="day-header">
+                        <h3>Day 4 - 5月4日</h3>
+                        <span class="location">宁波→台州</span>
+                    </div>
+                    <ul>
+                        <li><i class="fas fa-landmark"></i> 天一阁（上午）</li>
+                        <li><i class="fas fa-train"></i> 宁波→台州（下午）</li>
+                        <li><i class="fas fa-hotel"></i> 入住台州市区快捷酒店</li>
+                        <li><i class="fas fa-utensils"></i> 台州海鲜夜市</li>
+                    </ul>
+                </div>
+
+                <div class="day">
+                    <div class="day-header">
+                        <h3>Day 5 - 5月5日</h3>
+                        <span class="location">台州</span>
+                    </div>
+                    <ul>
+                        <li><i class="fas fa-mountain"></i> 神仙居风景区（全天）</li>
+                        <li><i class="fas fa-shopping-bag"></i> 路桥步行街</li>
+                        <li><i class="fas fa-hotel"></i> 继续入住台州市区</li>
+                    </ul>
+                </div>
+
+                <div class="day">
+                    <div class="day-header">
+                        <h3>Day 6 - 5月6日</h3>
+                        <span class="location">台州→深圳</span>
+                    </div>
+                    <ul>
+                        <li><i class="fas fa-archway"></i> 台州府城墙遗址公园</li>
+                        <li><i class="fas fa-shopping-bag"></i> 特产采购</li>
+                        <li><i class="fas fa-plane"></i> 台州路桥→深圳宝安（晚上）</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="transportation">
+            <h2>交通信息</h2>
+            <div class="transport-card">
+                <h3><i class="fas fa-plane"></i> 航班信息</h3>
+                <ul>
+                    <li>去程：深圳宝安→杭州萧山（建议8:00航班）</li>
+                    <li>返程：台州路桥→深圳宝安（建议19:00后航班）</li>
+                </ul>
+            </div>
+            <div class="transport-card">
+                <h3><i class="fas fa-train"></i> 高铁信息</h3>
+                <ul>
+                    <li>杭州→湖州：约1小时，票价约40元</li>
+                    <li>湖州→杭州：约1小时，票价约40元</li>
+                    <li>杭州→宁波：约1小时，票价约75元</li>
+                    <li>宁波→台州：约1.5小时，票价约90元</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="accommodation">
+            <h2>住宿安排（每晚不超过500元）</h2>
+            <div class="hotel-card">
+                <h3>湖州（1晚）</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 市中心/南浔古镇附近</p>
+                <p><i class="fas fa-hotel"></i> 推荐：如家/汉庭/7天连锁酒店</p>
+                <p><i class="fas fa-money-bill-wave"></i> 预算：300-400元/晚</p>
+            </div>
+            <div class="hotel-card">
+                <h3>杭州（1晚）</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 城站火车站附近</p>
+                <p><i class="fas fa-hotel"></i> 推荐：格林豪泰/锦江之星</p>
+                <p><i class="fas fa-money-bill-wave"></i> 预算：400-500元/晚</p>
+            </div>
+            <div class="hotel-card">
+                <h3>宁波（1晚）</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 火车站/天一广场附近</p>
+                <p><i class="fas fa-hotel"></i> 推荐：如家/汉庭精选</p>
+                <p><i class="fas fa-money-bill-wave"></i> 预算：350-450元/晚</p>
+            </div>
+            <div class="hotel-card">
+                <h3>台州（2晚）</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 路桥区市中心</p>
+                <p><i class="fas fa-hotel"></i> 推荐：格林豪泰/如家商旅</p>
+                <p><i class="fas fa-money-bill-wave"></i> 预算：300-400元/晚</p>
+            </div>
+        </section>
+
+        <section class="tips">
+            <h2>出行提示</h2>
+            <ul>
+                <li><i class="fas fa-money-bill-wave"></i> 提前在携程/飞猪预订酒店可享受优惠</li>
+                <li><i class="fas fa-train"></i> 建议提前3天购买高铁票</li>
+                <li><i class="fas fa-mobile-alt"></i> 下载高德地图、12306 APP</li>
+                <li><i class="fas fa-sun"></i> 准备防晒用品</li>
+                <li><i class="fas fa-umbrella"></i> 随身携带雨伞</li>
+                <li><i class="fas fa-credit-card"></i> 准备移动支付工具</li>
+            </ul>
+        </section>
+
+        <section class="budget">
+            <h2>预算规划</h2>
+            <ul>
+                <li><i class="fas fa-plane"></i> 往返机票：约1500元</li>
+                <li><i class="fas fa-train"></i> 城市间高铁：约250元</li>
+                <li><i class="fas fa-hotel"></i> 住宿费用：约2000元（5晚）</li>
+                <li><i class="fas fa-ticket-alt"></i> 景点门票：约400元</li>
+                <li><i class="fas fa-utensils"></i> 餐饮费用：约800元</li>
+                <li><i class="fas fa-bus"></i> 市内交通：约300元</li>
+                <li><i class="fas fa-shopping-bag"></i> 购物预算：自定</li>
+                <p class="total">基础总预算：约5250元（不含购物）</p>
+            </ul>
+        </section>
+
+        <footer>
+            <p>* 行程可根据实际情况灵活调整</p>
+            <p>* 建议提前预订机票、高铁票和酒店</p>
+            <p>* 景点游览时间可根据个人兴趣调整</p>
+        </footer>
+
+        <button id="backToTop" class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </div>
+
+    <nav class="mobile-nav">
+        <a href="#overview" class="nav-item">
+            <i class="fas fa-calendar-alt"></i>
+            <span>行程概览</span>
+        </a>
+        <a href="#transportation" class="nav-item">
+            <i class="fas fa-train"></i>
+            <span>交通</span>
+        </a>
+        <a href="#accommodation" class="nav-item">
+            <i class="fas fa-hotel"></i>
+            <span>住宿</span>
+        </a>
+        <a href="#budget" class="nav-item">
+            <i class="fas fa-wallet"></i>
+            <span>预算</span>
+        </a>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+</html> 
